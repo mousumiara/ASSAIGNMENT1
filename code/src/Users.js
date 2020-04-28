@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import {Dialog,DialogActions,DialogContent,DialogTitle} from '@material-ui/core';
 import Userform from "./Userform.js";
 import Displaytable from "./Displaytable.js";
+import { Route} from 'react-router-dom';
+import Edit from './Edit.js';
 
 
 
@@ -38,6 +40,7 @@ export default function FormDialog() {
             </DialogActions>
         </Dialog>
      <Displaytable/>
+     <Route path ={`/edit:id`}  component = {Edit} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
+import {Link} from "react-router-dom";
 
 
 export default class Displaytable extends Component {
@@ -45,6 +46,7 @@ export default class Displaytable extends Component {
                  <tr>
                      <th>Username</th>
                      <th>Email</th>
+                     <th>Edit</th>
                      <th>Delete</th>
                  </tr>
                 </thead>
@@ -56,7 +58,7 @@ export default class Displaytable extends Component {
                         
                             <td>{val.name}</td>
                             <td>{val.email}</td>
-                            {/* <td><Link to={`/edit${index}`} >Edit</Link></td>  */}
+                            <td><Link to={`/edit${index}`} >Edit</Link></td>  
                             <td> <button className="deletebtn" onClick={() => this.Delete(index)}>
                                 Delete
                             </button></td>

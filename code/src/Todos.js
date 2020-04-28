@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Login from "./Login.js";
-import { Route, Link,withRouter} from 'react-router-dom';
+import { Route, Link} from 'react-router-dom';
 
 
 class Todoslogin extends Component {
@@ -64,16 +64,16 @@ class Todoslogin extends Component {
     render() {
      //console.log(this.state.arr)
      console.log(this.state.loginstatus)
-    //  if(this.state.loginstatus){
-    //    //window.location.href='/Login'
-    //   return (
-    //           <div>
-    //           {/* <Link to="/login"></Link> */}
-    //           <Route path="/login" component={Login}/>
-    //         </div>
-    //       )     
-    //  }
-     //else{
+     if(this.state.loginstatus){
+       //window.location.href='/Login'
+      return (
+              <div>
+              <Link to="/login">Login</Link>
+              <Route path="/login" component={Login}/>
+            </div>
+          )     
+     }
+     else{
        return (
             <div>
               <form onSubmit={this.onSubmit}>
@@ -94,6 +94,6 @@ class Todoslogin extends Component {
        ) 
       }
      }    
-    
+}
   
-  export default withRouter(Todoslogin)
+  export default Todoslogin
