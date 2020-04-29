@@ -13,24 +13,24 @@ export default class Editform extends Component {
             password:'',
             newarr: JSON.parse(localStorage.getItem("userData"))
         }
-        console.log(this.props.match.params.id);
-        this.onChangeName = this.onChangeName.bind(this);
-        this.onChangeEmail = this.onChangeEmail.bind(this);
-        this.onChangePassword = this.onChangePassword.bind(this);
+        //console.log(this.props.match.params.id);
+        //this.onChangeName = this.onChangeName.bind(this);
+        // this.onChangeEmail = this.onChangeEmail.bind(this);
+        //this.onChangePassword = this.onChangePassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
  
-    onChangeName(e) {
+    onChangeName=(e)=>{
       this.setState({
         name: e.target.value
       })  
     }
-    onChangeEmail(e) {
+    onChangeEmail=(e)=>{
       this.setState({
         email: e.target.value
       })
     }
-    onChangePassword(e) {
+    onChangePassword=(e)=>{
         this.setState({
           password: e.target.value
         })
