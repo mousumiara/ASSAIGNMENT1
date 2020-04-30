@@ -13,17 +13,16 @@ class Login extends React.Component{
            
         }
     }
-    Logout=()=>{
-     this.props.history.push('/');
-       
-    }
+
+
+  
  
     render(){
         return(
             <React.Fragment>           
-                <div className="logintextstyle">login Successful !</div>
+                {/* <div className="logintextstyle">login Successful !</div> */}
                 <Todoform/>
-                <button onClick={this.Logout}>Logout</button>
+                
             </React.Fragment>
         )
     }

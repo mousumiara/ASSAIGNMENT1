@@ -96,3 +96,6 @@ select{
   height:auto;
   background-color: rgb(238, 243, 245);
 }
+.floatright{
+  float: right;
+}

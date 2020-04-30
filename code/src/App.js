@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Paper,Tabs,Tab,Typography,Box} from '@material-ui/core';
 import User from "./Users.js";
 import Todos from "./Todos.js";
+import {Route} from "react-router-dom";
 
 
 
@@ -59,7 +60,7 @@ export default function CenteredTabs() {
       <TabPanel value={value} index={0}>
         <Todos/>
       </TabPanel> 
-      
+      <Route path="/"></Route>
     </div>
   );
 }

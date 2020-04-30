@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from "./Login.js";
 import { Route, Link} from 'react-router-dom';
+// import loginUser from "./Loginuser.js";
 
 
 class Todoslogin extends Component {
@@ -12,7 +13,8 @@ class Todoslogin extends Component {
             email:'',
             password:'',
             arr:JSON.parse(localStorage.getItem("userData")) || [],
-            loginstatus:false
+            loginstatus:false,
+            loginUser:""
             
         }
         this.onSubmit = this.onSubmit.bind(this);
@@ -29,8 +31,13 @@ class Todoslogin extends Component {
           password: e.target.value
         })
       }
-     
 
+      
+      Logout=()=>{
+        console.log(this.props.history)
+        this.props.history.push('/');         
+       }
+  
     onSubmit(e) {
       e.preventDefault();
       this.state.arr.map((val,index)=>{       
@@ -39,7 +46,8 @@ class Todoslogin extends Component {
            
           {
             this.setState({
-              loginstatus:true
+              loginstatus:true,
+              loginUser:this.state.name
             })
             //return (this.props.history.push('/login'))
           }
@@ -62,14 +70,18 @@ class Todoslogin extends Component {
     }
    
     render() {
-     //console.log(this.state.arr)
+     console.log(this.state.loginUser)
      console.log(this.state.loginstatus)
      if(this.state.loginstatus){
        //window.location.href='/Login'
       return (
               <div>
-              <Link to="/login">Login</Link>
+              <Link to="/login">Enter your Todo</Link>
+              <p className="logintextstyle">Welcome {this.state.loginUser}</p>
               <Route path="/login" component={Login}/>
+              <button className="floatright" onClick={this.Logout}>Logout</button>
+              
+              
             </div>
           )     
      }
@@ -90,6 +102,7 @@ class Todoslogin extends Component {
               </div>
           </form> 
              {/* <Login/>  */}
+             
           </div>
        ) 
       }
